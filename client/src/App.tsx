@@ -11,7 +11,7 @@ import AboutUs from './components/About/AboutUs'
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Router basename="/rlfocus-webapp">
+      <Router>
         <Navigation />
         <Hero />
         <AboutUs />

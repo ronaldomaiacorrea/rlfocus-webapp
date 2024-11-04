@@ -1,20 +1,21 @@
 {
-  "name": "rlfocus",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {},
-  "private": "true",
-  "workspaces": [
-    "client",
-    "server"
-  ],
-  "scripts": {
-    "dev:client": "yarn workspace client dev",
-    "dev:server": "yarn workspace server start",
-    "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\""
-  },
-  "devDependencies": {
-    "concurrently": "^9.0.1"
-  }
+	"name": "rlfocus",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {},
+	"private": "true",
+	"workspaces": [
+		"client",
+		"server"
+	],
+	"scripts": {
+		"dev:client": "yarn workspace client dev",
+		"dev:server": "yarn workspace server start",
+		"dev": "concurrently \"yarn dev:client\" \"yarn dev:server\"",
+		"deploy:client": "yarn workspace client deploy"
+	},
+	"devDependencies": {
+		"concurrently": "^9.0.1"
+	}
 }
