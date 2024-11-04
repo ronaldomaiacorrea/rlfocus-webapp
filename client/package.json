@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ronaldomaiacorrea.github.io/rlfocus-webapp",
+  "homepage": "https://ronaldomaiacorrea.github.io/rlfocus-webapp/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.2",
