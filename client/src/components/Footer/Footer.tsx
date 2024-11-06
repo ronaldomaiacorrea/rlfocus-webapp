@@ -1,8 +1,28 @@
 import React from 'react'
 
 const Footer: React.FC = () => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault()
+    const section = document.querySelector(href)
+    const offset = 150 // Adjust for your header height
+    if (section) {
+      const top = section.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
+
+  const links = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'Sobre Nós' },
+    { href: '#services', label: 'Serviços' },
+    { href: '#contact', label: 'Contato' },
+  ]
+
   return (
-    <footer className="bg-blue-900 text-white py-8">
+    <footer className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
@@ -12,26 +32,17 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="#home" className="hover:text-blue-200">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-blue-200">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-blue-200">
-                  Serviços
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-blue-200">
-                  Contato
-                </a>
-              </li>
+              {links.map(({ href, label }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={(e) => handleSmoothScroll(e, href)}
+                    className="hover:text-blue-200"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>

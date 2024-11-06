@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const AboutUs: React.FC = () => {
   return (
-    <section id="about-us" className="py-20 bg-[#f5f8fc] text-[#142455]">
+    <section id="about" className="py-20 bg-[#f5f8fc] text-[#142455]">
       <div className="max-w-5xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-          className="text-2xl font-semibold text-center mb-6 text-[#ff9738]"
+          className="text-2xl font-semibold text-center mb-6 text-orange-500"
         >
           Conheça a RLFOCUS
         </motion.h3>
@@ -43,7 +43,7 @@ const AboutUs: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h4 className="text-xl font-semibold text-[#ffb26b] mb-4">
+            <h4 className="text-xl font-semibold text-indigo-700 mb-4 text-center">
               Missão
             </h4>
             <p className="text-gray-600 leading-relaxed">
@@ -59,7 +59,9 @@ const AboutUs: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.8, ease: 'easeOut' }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h4 className="text-xl font-semibold text-[#ffb26b] mb-4">Visão</h4>
+            <h4 className="text-xl font-semibold text-indigo-700 mb-4 text-center">
+              Visão
+            </h4>
             <p className="text-gray-600 leading-relaxed">
               Ser reconhecida como referência nacional em auditoria e soluções
               contábeis, elevando continuamente o padrão de qualidade e ética na
@@ -73,7 +75,7 @@ const AboutUs: React.FC = () => {
             transition={{ duration: 0.6, delay: 1, ease: 'easeOut' }}
             className="bg-white p-6 rounded-lg shadow-lg col-span-1 md:col-span-2"
           >
-            <h4 className="text-xl font-semibold text-[#ffb26b] mb-4">
+            <h4 className="text-xl font-semibold text-indigo-700 mb-4 text-center">
               Valores
             </h4>
             <ul className="text-gray-600 leading-relaxed space-y-2 list-disc list-inside">

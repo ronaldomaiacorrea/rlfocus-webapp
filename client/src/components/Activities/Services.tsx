@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import ServiceCard from './ServiceCard'
 import { services } from '@/data/content'
 
@@ -11,7 +12,15 @@ const Services: React.FC = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <ServiceCard key={index} service={service} />
+            </motion.div>
           ))}
         </div>
       </div>

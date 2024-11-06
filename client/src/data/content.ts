@@ -2,6 +2,7 @@ import { Service, TeamMember, Testimonial } from '@/types'
 import { Briefcase, BarChart, UserPlus, Shield } from 'lucide-react'
 import rafaPic from '@/assets/Rafa.jpeg'
 import cappiPic from '@/assets/Cappi.jpeg'
+import fernandoPic from '@/assets/Fernando.jpg'
 
 export const services: Service[] = [
   {
@@ -42,6 +43,12 @@ export const team: TeamMember[] = [
     role: 'Sócio executivo',
     bio: 'Luis Fernando Cappi Monteiro possui mais de 20 anos de experiência em posições de liderança nas áreas de auditoria, controles internos, finanças e contabilidade. Com sólido conhecimento em governança, gestão de riscos, controles internos e práticas contábeis, destaca-se na condução de auditorias e na reestruturação de processos financeiros em grandes organizações. Hábil na formação e motivação de equipes, Luis Fernando garante alta performance e resultados consistentes, com experiência significativa em interações com órgãos reguladores, como BACEN e SUSEP.',
     image: cappiPic,
+  },
+  {
+    name: 'Luiz Fernando de Paula',
+    role: 'Sócio executivo',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus placerat quam, efficitur aliquam orci sollicitudin a. Cras vel ex metus. Nullam nec tempus felis. Phasellus ut nisl vel libero pulvinar iaculis sit amet at elit. Curabitur hendrerit turpis non nibh vulputate tempor. In hac habitasse platea dictumst. Nam ac eros ac tellus volutpat efficitur. Proin in malesuada nisi. In eros enim, consequat sit amet sem pretium, gravida malesuada elit. Vestibulum mollis ligula eget tristique ornare. Suspendisse nisi augue, porttitor vel eros at, rhoncus hendrerit lectus. Sed sit amet urna eu leo efficitur auctor.',
+    image: fernandoPic,
   },
 ]
 
