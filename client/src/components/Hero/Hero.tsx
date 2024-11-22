@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
               oferecer soluções contábeis e de auditoria sob medida.
             </div>
             <motion.a
-              href="https://wa.me/SEUNUMERO"
+              href={whatsappLink}
               className="
               bg-orange-500 
               text-xl 
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
           <motion.a
-            href="https://wa.me/SEUNUMERO"
+            href={whatsappLink}
             className="
               md:hidden
               bg-orange-500 
@@ -124,7 +124,6 @@ const Hero: React.FC = () => {
               duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => whatsappLink}
           >
             Abra sua empresa agora!
           </motion.a>
