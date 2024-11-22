@@ -1,25 +1,25 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Navigation from './components/Navigation/Navigation'
-import Hero from './components/Hero/Hero'
-import Services from './components/Activities/Services'
-import Team from './components/Team/Team'
-import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
-import { BrowserRouter as Router } from 'react-router-dom'
-import AboutUs from './components/About/AboutUs'
+import { Route, Routes } from 'react-router-dom'
+import NotFound from './pages/NotFound'
+import Spinner from './components/ui/Spinner'
+
+const Home = React.lazy(() => import('./pages/Home'))
+const About = React.lazy(() => import('./pages/About'))
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Router>
-        <Navigation />
-        <Hero />
-        <AboutUs />
-        <Services />
-        <Team />
-        <Contact />
-        <Footer />
-      </Router>
+      <Navigation />
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+      <Footer />
     </div>
   )
 }

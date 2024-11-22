@@ -53,6 +53,9 @@ export default {
           5: 'hsl(var(--chart-5))',
         },
       },
+      fontSize: {
+        base: '1.25rem',
+      },
     },
   },
   plugins: [tailwindcssAnimate],

@@ -1,13 +1,19 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import background from '@/assets/backgroudPic.jpg'
+import { useWhatsAppLink } from '@/hooks/useWhatsAppLink'
 
 const Hero: React.FC = () => {
+  const phoneNumber = '5511998765432'
+  const message = 'Olá, gostaria de mais informações sobre os seus serviços!'
+  const whatsappLink = useWhatsAppLink(phoneNumber, message)
+
   const listItems = [
-    'Contabilidade Empresarial',
-    'Auditoria Financeira',
-    'Consultoria Tributária',
-    'Abertura de Empresa',
+    'Auditoria Contábil, Auditoria de TI e Compliance',
+    'Contabilidade e Gestão Financeira',
+    'Consultoria Estratégica e Empresarial',
+    'Tributos e Planejamento Fiscal',
+    'Gestão de Folha de Pagamento e Departamento Pessoal',
   ]
 
   const checkIcon = (
@@ -54,7 +60,7 @@ const Hero: React.FC = () => {
             <motion.a
               href="https://wa.me/SEUNUMERO"
               className="
-              bg-orange-400 
+              bg-orange-500 
               text-xl 
               text-center 
               text-white 
@@ -64,7 +70,7 @@ const Hero: React.FC = () => {
               hidden
               md:inline-block            
               rounded-lg 
-              hover:bg-orange-300 
+              hover:bg-orange-400 
               hover:text-indigo-900 
               items-center 
               transition-colors 
@@ -72,7 +78,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Abra sua empresa!
+              Abra sua empresa agora!
             </motion.a>
           </motion.div>
 
@@ -83,7 +89,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-[#1e357e] p-6 rounded-xl shadow-lg">
-              <ul className="text-lg text-white space-y-3">
+              <ul className="md:text-xl text-white space-y-3">
                 {listItems.map((item, index) => (
                   <motion.li
                     key={index}
@@ -103,23 +109,24 @@ const Hero: React.FC = () => {
             href="https://wa.me/SEUNUMERO"
             className="
               md:hidden
-              bg-[#ff9738] 
+              bg-orange-500 
               text-xl 
               text-center 
-              text-[#ffffff] 
+              text-white
               font-semibold 
               px-8
               py-3              
               rounded-lg 
-              hover:bg-[#ffcd9e] 
+              hover:bg-orange-400
               hover:text-indigo-900 
               items-center 
               transition-colors 
               duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => whatsappLink}
           >
-            Abra sua empresa!
+            Abra sua empresa agora!
           </motion.a>
         </div>
       </div>

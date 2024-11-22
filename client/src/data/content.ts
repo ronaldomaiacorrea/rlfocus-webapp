@@ -35,11 +35,11 @@ export const team: TeamMember[] = [
   {
     name: 'Rafael Cavalheri Alexandre',
     role: 'Sócio executivo',
-    bio: 'Rafael Cavalheri Alexandre é um profissional de TI com mais de 17 anos de experiência em auditoria, governança e segurança da informação, atuando principalmente em setores altamente regulados, como bancos, cooperativas de crédito e seguradoras digitais. Especializado em transformação digital e segurança cibernética, Rafael liderou equipes em projetos complexos e foi responsável técnico cadastrado no Banco Central do Brasil. Ele possui vasta experiência em metodologias ágeis, foco em resultados e certificação em proteção de dados, o que o qualifica para oferecer soluções personalizadas de alto impacto, em conformidade com a legislação vigente.',
+    bio: 'Rafael Cavalheri Alexandre é um especialista em governança, risco e compliance, com mais de 19 anos de experiência em auditoria contábil e de TI. Sua expertise em setores altamente regulados como bancos, cooperativas e seguradoras, aliada a um profundo conhecimento das normas contábeis e legislação, o habilita a oferecer soluções integradas que englobam tanto a integridade das informações financeiras quanto a segurança dos sistemas de informação. Com certificações como CNAI QTG, BCB, ISSO/IEC 17001 Auditor Líder e COBIT, além de ter sido cadastrado no Banco Central como responsável técnico por conduzir Auditoria Cooperativa, Rafael possui um conhecimento aprofundado das melhores práticas adotadas em processos e controles. Sua experiência como auditor contábil e auditor de TI o capacita a identificar e mitigar riscos, assegurando a conformidade da empresa com as regulamentações vigentes e a otimização dos processos de negócio.',
     image: rafaPic,
   },
   {
-    name: 'Luiz Fernando Cappi Monteiro',
+    name: 'Luis Fernando Cappi Monteiro',
     role: 'Sócio executivo',
     bio: 'Luis Fernando Cappi Monteiro possui mais de 20 anos de experiência em posições de liderança nas áreas de auditoria, controles internos, finanças e contabilidade. Com sólido conhecimento em governança, gestão de riscos, controles internos e práticas contábeis, destaca-se na condução de auditorias e na reestruturação de processos financeiros em grandes organizações. Hábil na formação e motivação de equipes, Luis Fernando garante alta performance e resultados consistentes, com experiência significativa em interações com órgãos reguladores, como BACEN e SUSEP.',
     image: cappiPic,
@@ -47,7 +47,7 @@ export const team: TeamMember[] = [
   {
     name: 'Luiz Fernando de Paula',
     role: 'Sócio executivo',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus placerat quam, efficitur aliquam orci sollicitudin a. Cras vel ex metus. Nullam nec tempus felis. Phasellus ut nisl vel libero pulvinar iaculis sit amet at elit. Curabitur hendrerit turpis non nibh vulputate tempor. In hac habitasse platea dictumst. Nam ac eros ac tellus volutpat efficitur. Proin in malesuada nisi. In eros enim, consequat sit amet sem pretium, gravida malesuada elit. Vestibulum mollis ligula eget tristique ornare. Suspendisse nisi augue, porttitor vel eros at, rhoncus hendrerit lectus. Sed sit amet urna eu leo efficitur auctor.',
+    bio: 'Luiz Fernando de Paula é contador, Gestor Tributário e Controller. Com mais de 20 anos de experiência nas áreas administrativa, financeira e estratégica de empresas multinacionais, é especialista em finanças, controle orçamentário e processos contábeis e tributários, com forte ênfase na otimização de custos. Possui ampla experiência em soluções contábeis, fiscais e de folha de pagamento, além de atuação em governança financeira e compliance. Também é corretor registrado na SUSEP, especializado em investimentos e blindagem patrimonial.  Possui sólido conhecimento em elaboração de demonstrações contábeis, balanço patrimonial e balancetes.',
     image: fernandoPic,
   },
 ]

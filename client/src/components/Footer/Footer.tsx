@@ -26,8 +26,10 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">RLFOCUS</h3>
-            <p>Excelência em Auditoria e Soluções Contábeis</p>
+            <h3 className="text-xl font-bold mb-4">
+              RLFOCUS AUDITORIA E SOLUÇÕES CONTÁBEIS LTDA
+            </h3>
+            <p>CNPJ: 38.244.866/0001-10</p>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Links Rápidos</h3>
@@ -48,12 +50,12 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contato</h3>
             <p>contato@rlfocus.com.br</p>
-            <p>(XX) XXXX-XXXX</p>
+            <p>(11) 9814-0879</p>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-blue-800 text-center">
           <p>
-            &copy; {new Date().getFullYear()} RLFOCUS. Todos os direitos
+            &copy; {new Date().getFullYear()} RLFOCUS LTDA. Todos os direitos
             reservados.
           </p>
         </div>

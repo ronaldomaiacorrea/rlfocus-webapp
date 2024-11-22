@@ -12,7 +12,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
         <img
           src={member.image}
           alt={member.name}
-          className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-orange-700"
+          className="w-32 h-32 rounded-full mb-4 object-cover border-4 border-orange-700"
         />
       )}
       <h3 className="text-xl font-semibold text-blue-900 mb-2">

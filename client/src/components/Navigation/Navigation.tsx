@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '@/assets/LogoTransparent_processed_2.png'
+import logo from '@/assets/RLFocusLogo.png'
 import { Button } from '@/components/ui/button'
 import { Menu } from 'lucide-react'
 import {
@@ -69,9 +69,9 @@ export default function Navigation() {
             </NavigationMenu>
           </div>
           <div className="md:hidden flex items-center justify-between w-full">
-            <Link to="/" className="flex items-center space-x-2">
+            <a href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold text-orange-400">RLFOCUS</span>
-            </Link>
+            </a>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button
