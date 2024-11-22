@@ -5,7 +5,6 @@ import Team from '@/components/Team/Team'
 import Contact from '@/components/Contact/Contact'
 
 const Home = () => {
-  console.log('it works')
   return (
     <>
       <Hero />

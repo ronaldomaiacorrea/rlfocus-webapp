@@ -4,9 +4,7 @@ import background from '@/assets/backgroudPic.jpg'
 import { useWhatsAppLink } from '@/hooks/useWhatsAppLink'
 
 const Hero: React.FC = () => {
-  const phoneNumber = '5511998765432'
-  const message = 'Olá, gostaria de mais informações sobre os seus serviços!'
-  const whatsappLink = useWhatsAppLink(phoneNumber, message)
+  const whatsappLink = useWhatsAppLink()
 
   const listItems = [
     'Auditoria Contábil, Auditoria de TI e Compliance',

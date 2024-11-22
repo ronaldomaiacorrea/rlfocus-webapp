@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '@/assets/RLFocusLogo.png'
+import { Link, useNavigate } from 'react-router-dom'
+import logo from '@/assets/Logo.png'
 import { Button } from '@/components/ui/button'
 import { Menu } from 'lucide-react'
 import {
@@ -15,15 +15,32 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'Sobre Nós' },
-  { href: '#services', label: 'Serviços' },
-  { href: '#team', label: 'Equipe' },
-  { href: '#contact', label: 'Contato' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#about', label: 'Sobre Nós' },
+  { href: '/#services', label: 'Serviços' },
+  { href: '/#team', label: 'Equipe' },
+  { href: '/#contact', label: 'Contato' },
 ]
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
+  const navigate = useNavigate()
+
+  const handleNavigation = (href: string) => {
+    const [path, hash] = href.split('#')
+    if (path) {
+      navigate(path, { replace: false })
+    }
+    setTimeout(() => {
+      const section = document.getElementById(hash)
+      const offset = 100
+      if (section) {
+        const top =
+          section.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+    }, 100)
+  }
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-gradient-to-r from-[#142455] via-[#142455e6] to-[#1d3a73e6] text-white bg-opacity-90 py-4">
@@ -50,18 +67,10 @@ export default function Navigation() {
                       asChild
                       onClick={(e) => {
                         e.preventDefault()
-                        const section = document.querySelector(item.href)
-                        const offset = 100
-                        if (section) {
-                          const top =
-                            section.getBoundingClientRect().top +
-                            window.scrollY -
-                            offset
-                          window.scrollTo({ top, behavior: 'smooth' })
-                        }
+                        handleNavigation(item.href)
                       }}
                     >
-                      <a href={item.href}>{item.label}</a>
+                      <Link to={item.href}>{item.label}</Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}

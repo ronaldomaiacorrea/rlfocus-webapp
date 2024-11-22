@@ -6,7 +6,10 @@ import { useMemo } from 'react'
  * @param message - Mensagem personalizada para enviar pelo WhatsApp.
  * @returns Link completo para abrir no WhatsApp.
  */
-export const useWhatsAppLink = (phoneNumber: string, message: string) => {
+export const useWhatsAppLink = () => {
+  const phoneNumber = '5512991876712'
+  const message = 'Olá, gostaria de mais informações sobre os seus serviços!'
+
   const whatsappLink = useMemo(() => {
     const encodedMessage = encodeURIComponent(message)
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`

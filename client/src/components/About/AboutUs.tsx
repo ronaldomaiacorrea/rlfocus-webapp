@@ -54,7 +54,7 @@ const AboutUs: React.FC = () => {
           />
           <Card
             title="Valores"
-            spanColums={2}
+            spanColumns={2}
             message={
               <ul className="text-gray-600 leading-relaxed space-y-2 list-disc list-inside">
                 <li>
@@ -84,8 +84,12 @@ const AboutUs: React.FC = () => {
           />
         </div>
         <div className="flex justify-center m-8">
-          <motion.button
-            className="
+          <Link to="/sobre">
+            <motion.a
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: 'easeIn' }}
+              className="
               bg-orange-400 
               text-xl 
               text-center 
@@ -100,11 +104,12 @@ const AboutUs: React.FC = () => {
               items-center 
               transition-colors 
               duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link to="/sobre">Saiba mais</Link>
-          </motion.button>
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Saiba mais
+            </motion.a>
+          </Link>
         </div>
       </div>
     </section>

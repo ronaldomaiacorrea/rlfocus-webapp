@@ -1,10 +1,17 @@
+import { useWhatsAppLink } from '@/hooks/useWhatsAppLink'
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const About = () => {
+  const whatsAppLink = useWhatsAppLink()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
-    <section id="about" className="py-20 bg-sky-100 text-blue-900">
+    <section className="py-20 bg-sky-100 text-blue-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
@@ -104,27 +111,30 @@ const About = () => {
             forma totalmente alinhada com as exigências legais e regulatórias.
           </p>
           <div className="flex justify-center m-8">
-            <motion.button
+            <motion.a
+              href={whatsAppLink}
               className="
-              bg-orange-400 
-              text-xl 
-              text-center 
-              text-white 
-              font-semibold 
-              px-8
-              py-3                        
-              md:inline-block            
-              rounded-lg 
-              hover:bg-orange-300 
-              hover:text-indigo-900 
-              items-center 
-              transition-colors 
-              duration-300"
+                bg-orange-400 
+                text-xl 
+                text-center 
+                text-white 
+                font-semibold 
+                px-8
+                py-3                        
+                md:inline-block            
+                rounded-lg 
+                hover:bg-orange-300 
+                hover:text-indigo-900 
+                items-center 
+                transition-colors 
+                duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/sobre">Seja nosso cliente!</Link>
-            </motion.button>
+              Seja nosso cliente!
+            </motion.a>
           </div>
         </motion.div>
       </div>
