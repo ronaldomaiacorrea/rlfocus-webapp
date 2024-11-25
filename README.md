@@ -2,7 +2,7 @@
 
 A modern web application for RL Focus, featuring a React frontend and Node.js backend.
 
-Demo gh-pages: https://ronaldomaiacorrea.github.io/rlfocus-webapp/
+Demo gh-pages: https://www.rlfocus.com.br
 
 ## Project Structure
 
