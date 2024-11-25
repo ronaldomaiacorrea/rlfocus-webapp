@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Card from '../ui/Card'
 import { Award } from 'lucide-react'
 import { valores } from '@/data/content'
+import CardSpan from '../ui/CardSpan'
 
 const AboutUs: React.FC = () => {
   return (
@@ -54,9 +55,8 @@ const AboutUs: React.FC = () => {
               prestação de serviços."
             centerContent
           />
-          <Card
+          <CardSpan
             title="Valores"
-            spanColumns={2}
             message={
               <div className="space-y-6">
                 {valores.map((item, index) => (
