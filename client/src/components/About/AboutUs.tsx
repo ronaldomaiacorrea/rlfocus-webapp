@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Card from '../ui/Card'
+import { Award } from 'lucide-react'
+import { valores } from '@/data/content'
 
 const AboutUs: React.FC = () => {
   return (
@@ -11,7 +13,7 @@ const AboutUs: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-4xl font-bold text-center mb-8 text-indigo-900"
+          className="md:text-4xl text-3xl font-bold text-center mb-8 text-indigo-900"
         >
           Sobre Nós
         </motion.h2>
@@ -19,7 +21,7 @@ const AboutUs: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-          className="text-2xl font-semibold text-center mb-6 text-indigo-00"
+          className="md:text-2xl text-xl font-semibold text-center mb-6 text-indigo-00"
         >
           Conheça a RLFOCUS Auditoria e Soluções Contábeis
         </motion.h3>
@@ -28,7 +30,7 @@ const AboutUs: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
-          className="text-xl text-center mb-12 text-gray-700 leading-relaxed max-w-3xl mx-auto"
+          className="md:text-xl text-lg text-center mb-12 text-gray-700 leading-relaxed max-w-3xl mx-auto"
         >
           Na <span className="font-bold text-orange-500">RLFOCUS</span>,
           transformamos números em inteligência estratégica para impulsionar o
@@ -56,36 +58,30 @@ const AboutUs: React.FC = () => {
             title="Valores"
             spanColumns={2}
             message={
-              <ul className="text-gray-600 leading-relaxed space-y-2 list-disc list-inside">
-                <li>
-                  <span className="font-semibold">Comprometimento:</span> Nosso
-                  foco é o sucesso e a tranquilidade dos nossos clientes.
-                </li>
-                <li>
-                  <span className="font-semibold">Excelência:</span> Oferecer
-                  serviços contábeis e de auditoria que não apenas atendem, mas
-                  superam as expectativas dos clientes, garantindo segurança e
-                  transparência na gestão financeira.
-                </li>
-                <li>
-                  <span className="font-semibold">Inovação:</span> Investimento
-                  em tecnologia e processos inovadores, assegurando que as
-                  soluções contábeis sejam modernas e adaptadas às necessidades
-                  específicas de cada cliente.
-                </li>
-                <li>
-                  <span className="font-semibold">Integridade:</span> A
-                  Confidencialidade, ética e a transparência nas interações com
-                  clientes e parceiros são priorizadas, estabelecendo relações
-                  de confiança duradouras.
-                </li>
-              </ul>
+              <div className="space-y-6">
+                {valores.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 border-b pb-4 last:border-b-0"
+                  >
+                    <Award className="w-6 h-6 text-orange-500 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-base font-semibold text-gray-800">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             }
           />
         </div>
         <div className="flex justify-center m-8">
           <Link to="/sobre">
-            <motion.a
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4, ease: 'easeIn' }}
@@ -108,7 +104,7 @@ const AboutUs: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               Saiba mais
-            </motion.a>
+            </motion.div>
           </Link>
         </div>
       </div>

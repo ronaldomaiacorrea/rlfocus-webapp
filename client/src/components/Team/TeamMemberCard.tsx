@@ -15,11 +15,15 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           className="w-32 h-32 rounded-full mb-4 object-cover border-4 border-orange-700"
         />
       )}
-      <h3 className="text-xl font-semibold text-blue-900 mb-2">
+      <h3 className="md:text-2xl text-xl font-semibold text-blue-900 mb-2">
         {member.name}
       </h3>
-      <p className="text-gray-600 font-medium mb-2">{member.role}</p>
-      <p className="text-gray-500 italic leading-relaxed">{member.bio}</p>
+      <p className="md:text-xl text-lg text-gray-600 font-medium mb-2">
+        {member.role}
+      </p>
+      <p className="md:text-xl text-lg text-gray-500 italic leading-relaxed">
+        {member.bio}
+      </p>
     </div>
   )
 }

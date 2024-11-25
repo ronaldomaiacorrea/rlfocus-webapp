@@ -16,8 +16,8 @@ const About = () => {
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl font-extrabold text-center m-8 text-orange-400"
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold text-center mt-24 mb-8 text-orange-400"
         >
           Transformando desafios em soluções concretas para o sucesso do seu
           negócio.
@@ -26,7 +26,7 @@ const About = () => {
           className="space-y-8 text-xl leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p>
             Na <span className="font-semibold">RLFOCUS</span>, somos apaixonados
@@ -49,7 +49,7 @@ const About = () => {
           className="mt-16"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
         >
           <h3 className="text-3xl font-bold mb-6">Nossos Diferenciais</h3>
           <ul className="space-y-6">
@@ -76,7 +76,7 @@ const About = () => {
                 className="flex items-start"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.3 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <CheckCircle className="w-6 h-6 text-orange-400 mt-1 mr-4 flex-shrink-0" />
                 <p className="text-xl">
@@ -90,7 +90,7 @@ const About = () => {
           className="mt-16 text-xl leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           <p>
             A <span className="font-semibold">RLFOCUS</span> é a parceira

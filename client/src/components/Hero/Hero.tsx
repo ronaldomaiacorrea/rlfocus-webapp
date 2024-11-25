@@ -7,8 +7,9 @@ const Hero: React.FC = () => {
   const whatsappLink = useWhatsAppLink()
 
   const listItems = [
-    'Auditoria Contábil, Auditoria de TI e Compliance',
     'Contabilidade e Gestão Financeira',
+    'Auditoria Contábil e Auditoria de TI',
+    'Compliance e Gestão de Riscos',
     'Consultoria Estratégica e Empresarial',
     'Tributos e Planejamento Fiscal',
     'Gestão de Folha de Pagamento e Departamento Pessoal',

@@ -7,7 +7,7 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-20">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
+        <h2 className="md:text-4xl text-3xl font-bold text-center mb-12 text-indigo-900">
           Nossos Serviços
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -16,7 +16,7 @@ const Services: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.2, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
               <ServiceCard key={index} service={service} />

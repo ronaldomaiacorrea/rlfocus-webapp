@@ -16,11 +16,11 @@ const Card = ({ title, message, centerContent, spanColumns }: CardProps) => {
       transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
       className={`bg-white p-6 rounded-lg shadow-lg ${spanColumns ? `md:col-span-${spanColumns}` : ''}`}
     >
-      <h4 className="text-2xl font-semibold text-indigo-700 mb-4 text-center">
+      <h4 className="md:text-2xl text-xl font-semibold text-indigo-700 mb-4 text-center">
         {title}
       </h4>
       <div
-        className={`text-xl text-gray-600 leading-relaxed ${centerContent ? 'text-center' : ''}`}
+        className={`md:text-xl text-lg text-gray-600 leading-relaxed ${centerContent ? 'text-center' : ''}`}
       >
         {message}
       </div>

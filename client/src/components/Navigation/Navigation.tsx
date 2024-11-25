@@ -49,7 +49,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center justify-between w-full">
             <div className="flex flex-row justify-start items-center">
               <a href="/" className="flex items-center space-x-2">
-                <img src={logo} width={150} height={150} alt="RLFocus Logo" />
+                <img src={logo} width={250} height={250} alt="RLFocus Logo" />
                 <span className="text-xl font-bold text-orange-300 hidden">
                   RLFOCUS
                 </span>
@@ -96,15 +96,19 @@ export default function Navigation() {
                 className="w-[300px] bg-[#142455] text-white"
               >
                 <div className="flex flex-col space-y-4 mt-4">
-                  <Link to="/" className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2">
                     <span className="text-3xl font-bold">RLFOCUS</span>
-                  </Link>
+                  </div>
                   {navItems.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}
                       className="text-white hover:text-orange-300 text-2xl"
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        handleNavigation(item.href)
+                        setIsOpen(false)
+                      }}
                     >
                       {item.label}
                     </a>
