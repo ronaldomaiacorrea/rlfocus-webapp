@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import background from '@/assets/backgroudPic.jpg'
+import background from '@/assets/backgroudPic.png'
 import { useWhatsAppLink } from '@/hooks/useWhatsAppLink'
 
 const Hero: React.FC = () => {

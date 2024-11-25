@@ -12,8 +12,8 @@ const About = React.lazy(() => import('./pages/About'))
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
       <Suspense fallback={<Spinner />}>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<About />} />
@@ -21,8 +21,8 @@ const App: React.FC = () => {
           <Route path="/sobre" element={<About />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </Suspense>
-      <Footer />
     </div>
   )
 }

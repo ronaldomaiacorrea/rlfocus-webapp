@@ -252,7 +252,7 @@ export const services: Service[] = [
   {
     title: 'Contabilidade e Gestão Financeira',
     description:
-      'Contabilidade e gestão financeira estratégica e precisa, com relatórios que auxiliam a tomada de decisão e o planejamento tributário.',
+      'Contabilidade e gestão financeira estratégica e precisa, com relatórios que auxiliam a tomada de decisão.',
     icon: CircleDollarSign,
     link: 'contabilidade',
     content: financialManagementContent,
@@ -324,7 +324,7 @@ export const team: TeamMember[] = [
   {
     name: 'Luiz Fernando de Paula',
     role: 'Sócio executivo',
-    bio: 'Luiz Fernando de Paula é contador, Gestor Tributário e Controller. Com mais de 20 anos de experiência nas áreas administrativa, financeira e estratégica de empresas multinacionais, é especialista em finanças, controle orçamentário e processos contábeis e tributários, com forte ênfase na otimização de custos. Possui ampla experiência em soluções contábeis, fiscais e de folha de pagamento, além de atuação em governança financeira e compliance. Também é corretor registrado na SUSEP, especializado em investimentos e blindagem patrimonial.  Possui sólido conhecimento em elaboração de demonstrações contábeis, balanço patrimonial e balancetes.',
+    bio: 'Luiz Fernando de Paula é contador, Gestor Tributário e Controller. Com mais de 20 anos de experiência nas áreas administrativa, financeira e estratégica de empresas multinacionais, é especialista em finanças, controle orçamentário e processos contábeis e tributários, com forte ênfase na otimização de custos. Possui ampla experiência em soluções contábeis, fiscais e de folha de pagamento, além de atuação em governança financeira e compliance. Também é corretor registrado na SUSEP, especializado em investimentos e blindagem patrimonial.  Possui sólido conhecimento em elaboração de demonstrações contábeis, balanço patrimonial e relatórios contábeis.',
     image: fernandoPic,
   },
 ]
@@ -351,7 +351,7 @@ export const valores: Valor[] = [
   {
     title: 'Excelência',
     description:
-      'Oferecer serviços contábeis e de auditoria que não apenas atendem, mas superam as expectativas dos clientes, garantindo segurança e transparência na gestão financeira.',
+      'Oferecer serviços contábeis e de auditoria que não apenas atendem, mas superam as expectativas dos clientes, garantindo segurança e transparência para a gestão do seu negócio.',
   },
   {
     title: 'Inovação',

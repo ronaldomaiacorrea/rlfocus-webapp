@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
   }
 
   const links = [
-    { href: '#home', label: 'Home' },
+    { href: '#home', label: 'Página Inicial' },
     { href: '#about', label: 'Sobre Nós' },
     { href: '#services', label: 'Serviços' },
     { href: '#contact', label: 'Contato' },

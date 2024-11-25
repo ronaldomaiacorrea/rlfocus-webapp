@@ -65,14 +65,10 @@ const AboutUs: React.FC = () => {
                     className="flex items-center gap-4 border-b pb-4 last:border-b-0"
                   >
                     <Award className="w-6 h-6 text-orange-500 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-base font-semibold text-gray-800">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        {item.description}
-                      </p>
-                    </div>
+                    <span>
+                      <b>{item.title}: </b>
+                      {item.description}
+                    </span>
                   </div>
                 ))}
               </div>
