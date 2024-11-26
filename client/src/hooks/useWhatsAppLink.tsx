@@ -1,14 +1,16 @@
 import { useMemo } from 'react'
 
 /**
- * Hook para criar um link de WhatsApp com número e mensagem personalizados.
- * @param phoneNumber - Número do WhatsApp no formato internacional (ex.: 5511998765432).
- * @param message - Mensagem personalizada para enviar pelo WhatsApp.
- * @returns Link completo para abrir no WhatsApp.
+ * Hook to create a WhatsApp link with a custom number and message.
+ * @param phoneNumber - WhatsApp number in international format (e.g., 5511998765432).
+ * @param message - Custom message to send via WhatsApp.
+ * @returns Full link to open in WhatsApp.
  */
+
 export const useWhatsAppLink = () => {
   const phoneNumber = '5512991876712'
-  const message = 'Olá, gostaria de mais informações sobre os seus serviços!'
+  const message =
+    'Olá RLFocus, gostaria de mais informações sobre os seus serviços!'
 
   const whatsappLink = useMemo(() => {
     const encodedMessage = encodeURIComponent(message)

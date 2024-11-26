@@ -1,7 +1,7 @@
 'use client'
 
-import * as React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import logo from '@/assets/Logo.png'
 import { Button } from '@/components/ui/button'
 import { Menu } from 'lucide-react'
@@ -11,7 +11,13 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
 const navItems = [
@@ -32,12 +38,14 @@ export default function Navigation() {
       navigate(path, { replace: false })
     }
     setTimeout(() => {
-      const section = document.getElementById(hash)
-      const offset = 100
-      if (section) {
-        const top =
-          section.getBoundingClientRect().top + window.scrollY - offset
-        window.scrollTo({ top, behavior: 'smooth' })
+      if (hash) {
+        const section = document.getElementById(hash)
+        const offset = 100
+        if (section) {
+          const top =
+            section.getBoundingClientRect().top + window.scrollY - offset
+          window.scrollTo({ top, behavior: 'smooth' })
+        }
       }
     }, 100)
   }
@@ -46,6 +54,7 @@ export default function Navigation() {
     <nav className="fixed top-0 z-50 w-full bg-gradient-to-r from-[#142455] via-[#142455e6] to-[#1d3a73e6] text-white bg-opacity-90 py-4">
       <div className="mx-auto max-w-[1200px] px-[10px]">
         <div className="flex h-auto items-center justify-between">
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-between w-full">
             <div className="flex flex-row justify-start items-center">
               <a href="/" className="flex items-center space-x-2">
@@ -70,13 +79,15 @@ export default function Navigation() {
                         handleNavigation(item.href)
                       }}
                     >
-                      <Link to={item.href}>{item.label}</Link>
+                      <a className="cursor-pointer">{item.label}</a>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
+
+          {/* Mobile Navigation */}
           <div className="md:hidden flex items-center justify-between w-full">
             <a href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold text-orange-400">RLFOCUS</span>
@@ -85,7 +96,7 @@ export default function Navigation() {
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="p-4 text-xl h-12 w-12 hover:bg-orange-300 focus-visible:bg-[#1e357e] focus-visible:ring-0 focus-visible:ring-offset-0 rounded-md"
+                  className="flex items-center justify-center text-xl h-12 w-12 hover:bg-orange-300 focus-visible:bg-[#1e357e] focus-visible:ring-0 focus-visible:ring-offset-0 rounded-md"
                 >
                   <Menu size={40} strokeWidth={2} />
                   <span className="sr-only">Toggle Menu</span>
@@ -96,14 +107,16 @@ export default function Navigation() {
                 className="w-[300px] bg-[#142455] text-white"
               >
                 <div className="flex flex-col space-y-4 mt-4">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-3xl font-bold">RLFOCUS</span>
-                  </div>
+                  <SheetTitle className="text-3xl font-bold text-white">
+                    RLFOCUS
+                  </SheetTitle>
+                  <SheetDescription className="text-sm text-gray-300 hidden">
+                    Navegue pelos itens do menu abaixo.
+                  </SheetDescription>
                   {navItems.map((item) => (
                     <a
                       key={item.href}
-                      href={item.href}
-                      className="text-white hover:text-orange-300 text-2xl"
+                      className="text-white hover:text-orange-300 text-2xl cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault()
                         handleNavigation(item.href)

@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import emailjs from '@emailjs/browser'
+import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from '@/lib/constants'
 interface FormData {
   name: string
   email: string
@@ -7,78 +9,96 @@ interface FormData {
   phone: string
 }
 
+emailjs.init({
+  limitRate: {
+    id: 'app',
+    throttle: 10000,
+  },
+})
+
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>()
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formData)
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          message: data.message,
+        },
+        PUBLIC_KEY,
+      )
+      console.log('Email sent successfully:', response)
+      alert('Mensagem enviada com sucesso!')
+      reset()
+    } catch (error) {
+      console.error('Error sending email:', error)
+      alert('Erro ao enviar a mensagem. Por favor, tente novamente.')
+    }
   }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-2" noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-2" noValidate>
       <label htmlFor="name" className="block text-orange-400">
         Nome <span className="text-red-500">*</span>
       </label>
       <input
         type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
         placeholder="Nome"
-        className="w-full p-2 border border-gray-300 rounded text-black"
-        required
+        className={`w-full p-2 border ${
+          errors.name ? 'border-red-500' : 'border-gray-300'
+        } rounded text-black`}
+        {...register('name', { required: 'Nome é obrigatório' })}
       />
+      {errors.name && <p className="text-red-500">{errors.name.message}</p>}
       <label htmlFor="email" className="block text-orange-400">
         E-mail <span className="text-red-500">*</span>
       </label>
       <input
         type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
         placeholder="E-mail"
-        className="w-full p-2 border border-gray-300 rounded text-black"
-        required
+        className={`w-full p-2 border ${
+          errors.email ? 'border-red-500' : 'border-gray-300'
+        } rounded text-black`}
+        {...register('email', {
+          required: 'E-mail é obrigatório',
+          pattern: {
+            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message: 'E-mail inválido',
+          },
+        })}
       />
+      {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       <label htmlFor="email" className="block text-orange-400">
         Telefone <span className="text-red-500">*</span>
       </label>
       <input
         type="phone"
-        name="phone"
-        value={formData.phone}
-        onChange={handleChange}
         placeholder="Telefone"
-        className="w-full p-2 border border-gray-300 rounded text-black"
-        required
+        className={`w-full p-2 border ${
+          errors.phone ? 'border-red-500' : 'border-gray-300'
+        } rounded text-black`}
+        {...register('phone', {
+          required: 'Telefone é obrigatório',
+        })}
       />
+      {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
       <label htmlFor="email" className="block text-orange-400">
         Mensagem
       </label>
       <textarea
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
         placeholder="Mensagem"
         rows={4}
         className="w-full p-2 border border-gray-300 rounded text-black"
-        required
+        {...register('message')}
       />
       <p className="text-sm text-orange-500 italic">
         Os campos marcados com

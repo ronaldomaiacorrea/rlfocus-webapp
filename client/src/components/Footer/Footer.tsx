@@ -1,25 +1,32 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Footer: React.FC = () => {
-  const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    e.preventDefault()
-    const section = document.querySelector(href)
-    const offset = 150 // Adjust for your header height
-    if (section) {
-      const top = section.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
-  }
+  const navigate = useNavigate()
 
-  const links = [
-    { href: '#home', label: 'Página Inicial' },
-    { href: '#about', label: 'Sobre Nós' },
-    { href: '#services', label: 'Serviços' },
-    { href: '#contact', label: 'Contato' },
+  const navItems = [
+    { href: '/#home', label: 'Página Inicial' },
+    { href: '/#about', label: 'Sobre Nós' },
+    { href: '/#services', label: 'Serviços' },
+    { href: '/#team', label: 'Equipe' },
+    { href: '/#contact', label: 'Contato' },
   ]
+
+  const handleNavigation = (href: string) => {
+    const [path, hash] = href.split('#')
+    if (path) {
+      navigate(path, { replace: false })
+    }
+    setTimeout(() => {
+      const section = document.getElementById(hash)
+      const offset = 100
+      if (section) {
+        const top =
+          section.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+    }, 100)
+  }
 
   return (
     <footer className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-8">
@@ -34,11 +41,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
-              {links.map(({ href, label }) => (
+              {navItems.map(({ href, label }) => (
                 <li key={href}>
                   <a
                     href={href}
-                    onClick={(e) => handleSmoothScroll(e, href)}
+                    onClick={() => handleNavigation(href)}
                     className="hover:text-blue-200"
                   >
                     {label}
