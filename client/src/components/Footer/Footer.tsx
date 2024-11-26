@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { SiInstagram } from 'react-icons/si'
 
 const Footer: React.FC = () => {
   const navigate = useNavigate()
@@ -55,9 +56,12 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Contato</h3>
-            <p>contato@rlfocus.com.br</p>
-            <p>(11) 9814-0879</p>
+            <h3 className="text-xl font-bold mb-4">Redes Sociais</h3>
+            <div className="text-orange-400 hover:text-indigo-500">
+              <a href="https://www.instagram.com/rlfocus_/" target="_blank">
+                <SiInstagram size={30} />
+              </a>
+            </div>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-blue-800 text-center">
